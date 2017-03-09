@@ -13,11 +13,11 @@ let bridge = hue.bridge('192.168.1.142');
 let username = 'xV5U8C2oBX5swYoNe8NLSRc4u6wHp2X-n-9z4pLf';
 let user;
 
-const mavTC = tinycolor('#FF3800').toRgb();
-const conTC = tinycolor('#0DFF47').toRgb();
-const menTC = tinycolor('#0C1BE8').toRgb();
-const dynTC = tinycolor('#31152B').toRgb();
-const navTC = tinycolor('#E8D90C').toRgb();
+const mavTC = tinycolor('#e62325').toRgb();
+const conTC = tinycolor('#785ef0').toRgb();
+const menTC = tinycolor('#dc267f').toRgb();
+const dynTC = tinycolor('#009bef').toRgb();
+const navTC = tinycolor('#ffb000').toRgb();
 
 const mav = rgb_to_cie(mavTC.r, mavTC.g, mavTC.b).map((x) => { return parseFloat(x); });
 const con = rgb_to_cie(conTC.r, conTC.g, conTC.b).map((x) => { return parseFloat(x); });
@@ -122,25 +122,21 @@ bridge.createUser('sxsw', function(data) {
 $('.btns').addEventListener('click', (e) => {
   if (e.target && e.target.nodeName === 'BUTTON') {
     if (e.target.dataset.personality == 'maverick') {
-      let red = rgb_to_cie(255, 0, 0);
       console.log(mav);
       user.setLightState(2, {xy: mav}, (data) => { console.log(data); }, (err) => { console.log(err);});
     }
 
     else if (e.target.dataset.personality == 'connector') {
-      let green = rgb_to_cie(0, 255, 0);
       console.log(con);
       user.setLightState(2, {xy: con}, (data) => { console.log(data); }, (err) => { console.log(err);});
     }
 
     else if (e.target.dataset.personality == 'mentor') {
-      let blue = rgb_to_cie(0, 0, 255);
       console.log(men);
       user.setLightState(2, {xy: men}, (data) => { console.log(data); }, (err) => { console.log(err);});
     }
 
     else if (e.target.dataset.personality == 'dynamo') {
-      let blue = rgb_to_cie(0, 0, 255);
       console.log(dyn);
       user.setLightState(2, {xy: dyn}, (data) => { console.log(data); }, (err) => { console.log(err);});
     }
