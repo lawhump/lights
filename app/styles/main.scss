@@ -1,0 +1,121 @@
+$icon-font-path: '../fonts/';
+// bower:scss
+@import "bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+
+$ratio: 1.125;
+
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
+
+@mixin animation($animate...) {
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    -o-animation:      $animations;
+    animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+html {
+  font-size: 62.5%
+}
+
+body {
+  color: #333;
+  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 1.6rem;
+  height: 100vh;
+  line-height: 2.56rem;
+  overflow-x: hidden;
+  position: relative;
+  text-rendering: optimizeLegibility;
+}
+
+body,html {
+  border: none;
+}
+
+body,h1,h2,h3,h4,h5,h6,html,p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: pow($ratio, 6) * 1rem;
+}
+
+h2 {
+  font-size: pow($ratio, 5) * 1rem;
+}
+
+h3 {
+  font-size: pow($ratio, 4) * 1rem;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+h4 {
+  font-size: pow($ratio, 3) * 1rem;
+}
+
+h5 {
+  font-size: pow($ratio, 2) * 1rem;
+}
+
+h6 {
+  font-size: pow($ratio, 1) * 1rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+
+  img {
+    display: block;
+  }
+}
+
+nav {
+  h1 {
+    color: white;
+    padding: 1rem 0;
+  }
+}
