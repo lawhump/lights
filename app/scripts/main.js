@@ -10,7 +10,7 @@ let $ = (query) => {
 
 let hue = jsHue();
 let bridge = hue.bridge('192.168.1.142');
-let username = "xV5U8C2oBX5swYoNe8NLSRc4u6wHp2X-n-9z4pLf";
+let username = 'xV5U8C2oBX5swYoNe8NLSRc4u6wHp2X-n-9z4pLf';
 let user;
 
 const mavTC = tinycolor('#FF3800').toRgb();
@@ -31,16 +31,16 @@ const get = (url, callback) => {
     if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
       callback(xmlHttp.responseText);
     }
-  xmlHttp.open("GET", url, true); // true for asynchronous
+  xmlHttp.open('GET', url, true); // true for asynchronous
   xmlHttp.send(null);
 }
 
 const samples = [
-                  {"connector":30,"maverick":30,"mentor":30,"navigator":10,"dynamo":0},
-                  {"connector":40,"maverick":30,"mentor":30,"navigator":10,"dynamo":0},
-                  {"connector":20,"maverick":10,"mentor":30,"navigator":10,"dynamo":0},
-                  {"connector":30,"maverick":30,"mentor":30,"navigator":10,"dynamo":100},
-                  {"connector":30,"maverick":30,"mentor":30,"navigator":60,"dynamo":0}
+                  {'connector':30,'maverick':30,'mentor':30,'navigator':10,'dynamo':0},
+                  {'connector':40,'maverick':30,'mentor':30,'navigator':10,'dynamo':0},
+                  {'connector':20,'maverick':10,'mentor':30,'navigator':10,'dynamo':0},
+                  {'connector':30,'maverick':30,'mentor':30,'navigator':10,'dynamo':100},
+                  {'connector':30,'maverick':30,'mentor':30,'navigator':60,'dynamo':0}
                 ];
 
 const hitEndpoint = () => {
@@ -59,13 +59,12 @@ const hitEndpoint = () => {
       return largest;
     };
 
-    let sample = samples[Math.floor(5*Math.random())];
+    let sample = samples[ Math.floor(5 * Math.random() ) ];
     console.log(sample);
     let demographic = getLargestDemographic(sample);
     // let demographic = getLargestDemographic(data);
-    switch(demographic) {
-      // TODO change this!!!
-      let numLights = 10;
+    let numLights = 10;
+    switch (demographic) {
       case 'connector':
         // Change the lights in all Groups
         for (let i=0; i<numLights; i++){
@@ -154,10 +153,3 @@ $('.btns').addEventListener('click', (e) => {
 });
 
 window.setInterval(hitEndpoint, 3000);
-
-/*
-  wait some time
-  hit the endpoint
-  see which demographic has the largest ratio
-  change the color accordingly
-*/

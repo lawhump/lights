@@ -366,10 +366,10 @@ var colors = function () {
             return rgbToHex(rgb[0], rgb[1], rgb[2]);
         },
 
-        hexFullRed:     "FF0000",
-        hexFullGreen:   "00FF00",
-        hexFullBlue:    "0000FF",
-        hexFullWhite:   "FFFFFF"
+        hexFullRed:     'FF0000',
+        hexFullGreen:   '00FF00',
+        hexFullBlue:    '0000FF',
+        hexFullWhite:   'FFFFFF'
     };
 };
 
