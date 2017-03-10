@@ -9,7 +9,7 @@ let $ = (query) => {
 };
 
 let hue = jsHue();
-let bridge = hue.bridge('192.168.1.142');
+let bridge = hue.bridge('10.20.5.75');
 let username = 'xV5U8C2oBX5swYoNe8NLSRc4u6wHp2X-n-9z4pLf';
 let user;
 
