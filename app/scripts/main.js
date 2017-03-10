@@ -70,7 +70,7 @@ const hitEndpoint = () => {
         for (let i=0; i<numLights; i++){
           // user.setLightState(i, {xy: con}, (data) => { console.log(data); }, (err) => { console.log(err);});
         }
-        user.setLightState(2, {xy: con}, (data) => { console.log(data); }, (err) => { console.log(err);});
+        user.setLightState(1, {xy: con}, (data) => { console.log(data); }, (err) => { console.log(err);});
         break;
 
       case 'maverick':
@@ -78,7 +78,7 @@ const hitEndpoint = () => {
         for (let i=0; i<numLights; i++){
           // user.setLightState(i, {xy: mav}, (data) => { console.log(data); }, (err) => { console.log(err);});
         }
-        user.setLightState(2, {xy: mav}, (data) => { console.log(data); }, (err) => { console.log(err);});
+        user.setLightState(1, {xy: mav}, (data) => { console.log(data); }, (err) => { console.log(err);});
         break;
 
       case 'navigator':
@@ -86,7 +86,7 @@ const hitEndpoint = () => {
         for (let i=0; i<numLights; i++){
           // user.setLightState(i, {xy: nav}, (data) => { console.log(data); }, (err) => { console.log(err);});
         }
-        user.setLightState(2, {xy: nav}, (data) => { console.log(data); }, (err) => { console.log(err);});
+        user.setLightState(1, {xy: nav}, (data) => { console.log(data); }, (err) => { console.log(err);});
         break;
 
       case 'dynamo':
@@ -94,7 +94,7 @@ const hitEndpoint = () => {
         for (let i=0; i<numLights; i++){
           // user.setLightState(i, {xy: dyn}, (data) => { console.log(data); }, (err) => { console.log(err);});
         }
-        user.setLightState(2, {xy: dyn}, (data) => { console.log(data); }, (err) => { console.log(err);});
+        user.setLightState(1, {xy: dyn}, (data) => { console.log(data); }, (err) => { console.log(err);});
         break;
 
       case 'mentor':
@@ -102,7 +102,7 @@ const hitEndpoint = () => {
         for (let i=0; i<numLights; i++){
           // user.setLightState(i, {xy: men}, (data) => { console.log(data); }, (err) => { console.log(err);});
         }
-        user.setLightState(2, {xy: men}, (data) => { console.log(data); }, (err) => { console.log(err);});
+        user.setLightState(1, {xy: men}, (data) => { console.log(data); }, (err) => { console.log(err);});
         break;
 
       default:
@@ -116,34 +116,34 @@ const hitEndpoint = () => {
 // create user account (requires link button to be pressed)
 bridge.createUser('sxsw', function(data) {
   user = bridge.user(username);
-  user.setLightState(2, { on: true }, function(data) { console.log(data); });
+  user.setLightState(1, { on: true }, function(data) { console.log(data); });
 });
 
 $('.btns').addEventListener('click', (e) => {
   if (e.target && e.target.nodeName === 'BUTTON') {
     if (e.target.dataset.personality == 'maverick') {
       console.log(mav);
-      user.setLightState(2, {xy: mav}, (data) => { console.log(data); }, (err) => { console.log(err);});
+      user.setLightState(1, {xy: mav}, (data) => { console.log(data); }, (err) => { console.log(err);});
     }
 
     else if (e.target.dataset.personality == 'connector') {
       console.log(con);
-      user.setLightState(2, {xy: con}, (data) => { console.log(data); }, (err) => { console.log(err);});
+      user.setLightState(1, {xy: con}, (data) => { console.log(data); }, (err) => { console.log(err);});
     }
 
     else if (e.target.dataset.personality == 'mentor') {
       console.log(men);
-      user.setLightState(2, {xy: men}, (data) => { console.log(data); }, (err) => { console.log(err);});
+      user.setLightState(1, {xy: men}, (data) => { console.log(data); }, (err) => { console.log(err);});
     }
 
     else if (e.target.dataset.personality == 'dynamo') {
       console.log(dyn);
-      user.setLightState(2, {xy: dyn}, (data) => { console.log(data); }, (err) => { console.log(err);});
+      user.setLightState(1, {xy: dyn}, (data) => { console.log(data); }, (err) => { console.log(err);});
     }
 
     else {
       console.log(nav);
-      user.setLightState(2, {xy: nav}, (data) => { console.log(data); }, (err) => { console.log(err);});
+      user.setLightState(1, {xy: nav}, (data) => { console.log(data); }, (err) => { console.log(err);});
     }
   }
 });
