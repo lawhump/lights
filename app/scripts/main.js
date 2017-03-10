@@ -68,7 +68,7 @@ const hitEndpoint = () => {
       case 'connector':
         // Change the lights in all Groups
         for (let i=0; i<numLights; i++){
-          user.setLightState(i, {xy: con}, (data) => { console.log(data); }, (err) => { console.log(err);});
+          user.setLightState(i+1, {xy: con}, (data) => { console.log(data); }, (err) => { console.log(err);});
         }
         // user.setLightState(1, {xy: con}, (data) => { console.log(data); }, (err) => { console.log(err);});
         break;
@@ -76,7 +76,7 @@ const hitEndpoint = () => {
       case 'maverick':
         // Change the lights in all Groups
         for (let i=0; i<numLights; i++){
-          user.setLightState(i, {xy: mav}, (data) => { console.log(data); }, (err) => { console.log(err);});
+          user.setLightState(i+1, {xy: mav}, (data) => { console.log(data); }, (err) => { console.log(err);});
         }
         // user.setLightState(1, {xy: mav}, (data) => { console.log(data); }, (err) => { console.log(err);});
         break;
@@ -84,7 +84,7 @@ const hitEndpoint = () => {
       case 'navigator':
         // Change the lights in all Groups
         for (let i=0; i<numLights; i++){
-          user.setLightState(i, {xy: nav}, (data) => { console.log(data); }, (err) => { console.log(err);});
+          user.setLightState(i+1, {xy: nav}, (data) => { console.log(data); }, (err) => { console.log(err);});
         }
         // user.setLightState(1, {xy: nav}, (data) => { console.log(data); }, (err) => { console.log(err);});
         break;
@@ -92,7 +92,7 @@ const hitEndpoint = () => {
       case 'dynamo':
         // Change the lights in all Groups
         for (let i=0; i<numLights; i++){
-          user.setLightState(i, {xy: dyn}, (data) => { console.log(data); }, (err) => { console.log(err);});
+          user.setLightState(i+1, {xy: dyn}, (data) => { console.log(data); }, (err) => { console.log(err);});
         }
         // user.setLightState(1, {xy: dyn}, (data) => { console.log(data); }, (err) => { console.log(err);});
         break;
@@ -100,7 +100,7 @@ const hitEndpoint = () => {
       case 'mentor':
         // Change the lights in all Groups
         for (let i=0; i<numLights; i++){
-          user.setLightState(i, {xy: men}, (data) => { console.log(data); }, (err) => { console.log(err);});
+          user.setLightState(i+1, {xy: men}, (data) => { console.log(data); }, (err) => { console.log(err);});
         }
         // user.setLightState(1, {xy: men}, (data) => { console.log(data); }, (err) => { console.log(err);});
         break;
