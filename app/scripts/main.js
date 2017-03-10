@@ -61,8 +61,8 @@ const hitEndpoint = () => {
 
     let sample = samples[ Math.floor(5 * Math.random() ) ];
     console.log(sample);
-    let demographic = getLargestDemographic(sample);
-    // let demographic = getLargestDemographic(data);
+    // let demographic = getLargestDemographic(sample);
+    let demographic = getLargestDemographic(data);
     let numLights = 10;
     switch (demographic) {
       case 'connector':
