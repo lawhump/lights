@@ -13,6 +13,8 @@ let bridge = hue.bridge('10.20.5.75');
 let username = 'xV5U8C2oBX5swYoNe8NLSRc4u6wHp2X-n-9z4pLf';
 let user;
 
+const numLights = 10;
+
 const mavTC = tinycolor('#e62325').toRgb();
 const conTC = tinycolor('#785ef0').toRgb();
 const menTC = tinycolor('#dc267f').toRgb();
@@ -63,7 +65,7 @@ const hitEndpoint = () => {
     console.log(sample);
     // let demographic = getLargestDemographic(sample);
     let demographic = getLargestDemographic(data);
-    let numLights = 10;
+
     switch (demographic) {
       case 'connector':
         // Change the lights in all Groups
@@ -122,27 +124,37 @@ $('.btns').addEventListener('click', (e) => {
   if (e.target && e.target.nodeName === 'BUTTON') {
     if (e.target.dataset.personality == 'maverick') {
       console.log(mav);
-      user.setLightState(1, {xy: mav}, (data) => { console.log(data); }, (err) => { console.log(err);});
+      for (let i=0; i<numLights; i++){
+        user.setLightState(i+1, {xy: mav}, (data) => { console.log(data); }, (err) => { console.log(err);});
+      }
     }
 
     else if (e.target.dataset.personality == 'connector') {
       console.log(con);
-      user.setLightState(1, {xy: con}, (data) => { console.log(data); }, (err) => { console.log(err);});
+      for (let i=0; i<numLights; i++){
+        user.setLightState(i+1, {xy: con}, (data) => { console.log(data); }, (err) => { console.log(err);});
+      }
     }
 
     else if (e.target.dataset.personality == 'mentor') {
       console.log(men);
-      user.setLightState(1, {xy: men}, (data) => { console.log(data); }, (err) => { console.log(err);});
+      for (let i=0; i<numLights; i++){
+        user.setLightState(i+1, {xy: men}, (data) => { console.log(data); }, (err) => { console.log(err);});
+      }
     }
 
     else if (e.target.dataset.personality == 'dynamo') {
       console.log(dyn);
-      user.setLightState(1, {xy: dyn}, (data) => { console.log(data); }, (err) => { console.log(err);});
+      for (let i=0; i<numLights; i++){
+        user.setLightState(i+1, {xy: dyn}, (data) => { console.log(data); }, (err) => { console.log(err);});
+      }
     }
 
     else {
       console.log(nav);
-      user.setLightState(1, {xy: nav}, (data) => { console.log(data); }, (err) => { console.log(err);});
+      for (let i=0; i<numLights; i++){
+        user.setLightState(i+1, {xy: nav}, (data) => { console.log(data); }, (err) => { console.log(err);});
+      }
     }
   }
 });
