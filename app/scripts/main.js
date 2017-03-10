@@ -61,48 +61,48 @@ const hitEndpoint = () => {
 
     let sample = samples[ Math.floor(5 * Math.random() ) ];
     console.log(sample);
-    // let demographic = getLargestDemographic(sample);
-    let demographic = getLargestDemographic(data);
-    let numLights = 10;
+    let demographic = getLargestDemographic(sample);
+    // let demographic = getLargestDemographic(data);
+    let numLights = 8;
     switch (demographic) {
       case 'connector':
         // Change the lights in all Groups
         for (let i=0; i<numLights; i++){
-          // user.setLightState(i, {xy: con}, (data) => { console.log(data); }, (err) => { console.log(err);});
+          user.setLightState(i, {xy: con}, (data) => { console.log(data); }, (err) => { console.log(err);});
         }
-        user.setLightState(1, {xy: con}, (data) => { console.log(data); }, (err) => { console.log(err);});
+        // user.setLightState(1, {xy: con}, (data) => { console.log(data); }, (err) => { console.log(err);});
         break;
 
       case 'maverick':
         // Change the lights in all Groups
         for (let i=0; i<numLights; i++){
-          // user.setLightState(i, {xy: mav}, (data) => { console.log(data); }, (err) => { console.log(err);});
+          user.setLightState(i, {xy: mav}, (data) => { console.log(data); }, (err) => { console.log(err);});
         }
-        user.setLightState(1, {xy: mav}, (data) => { console.log(data); }, (err) => { console.log(err);});
+        // user.setLightState(1, {xy: mav}, (data) => { console.log(data); }, (err) => { console.log(err);});
         break;
 
       case 'navigator':
         // Change the lights in all Groups
         for (let i=0; i<numLights; i++){
-          // user.setLightState(i, {xy: nav}, (data) => { console.log(data); }, (err) => { console.log(err);});
+          user.setLightState(i, {xy: nav}, (data) => { console.log(data); }, (err) => { console.log(err);});
         }
-        user.setLightState(1, {xy: nav}, (data) => { console.log(data); }, (err) => { console.log(err);});
+        // user.setLightState(1, {xy: nav}, (data) => { console.log(data); }, (err) => { console.log(err);});
         break;
 
       case 'dynamo':
         // Change the lights in all Groups
         for (let i=0; i<numLights; i++){
-          // user.setLightState(i, {xy: dyn}, (data) => { console.log(data); }, (err) => { console.log(err);});
+          user.setLightState(i, {xy: dyn}, (data) => { console.log(data); }, (err) => { console.log(err);});
         }
-        user.setLightState(1, {xy: dyn}, (data) => { console.log(data); }, (err) => { console.log(err);});
+        // user.setLightState(1, {xy: dyn}, (data) => { console.log(data); }, (err) => { console.log(err);});
         break;
 
       case 'mentor':
         // Change the lights in all Groups
         for (let i=0; i<numLights; i++){
-          // user.setLightState(i, {xy: men}, (data) => { console.log(data); }, (err) => { console.log(err);});
+          user.setLightState(i, {xy: men}, (data) => { console.log(data); }, (err) => { console.log(err);});
         }
-        user.setLightState(1, {xy: men}, (data) => { console.log(data); }, (err) => { console.log(err);});
+        // user.setLightState(1, {xy: men}, (data) => { console.log(data); }, (err) => { console.log(err);});
         break;
 
       default:
@@ -116,7 +116,6 @@ const hitEndpoint = () => {
 // create user account (requires link button to be pressed)
 bridge.createUser('sxsw', function(data) {
   user = bridge.user(username);
-  user.setLightState(1, { on: true }, function(data) { console.log(data); });
 });
 
 $('.btns').addEventListener('click', (e) => {
