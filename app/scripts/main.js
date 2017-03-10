@@ -63,7 +63,7 @@ const hitEndpoint = () => {
     console.log(sample);
     // let demographic = getLargestDemographic(sample);
     let demographic = getLargestDemographic(data);
-    let numLights = 12;
+    let numLights = 10;
     switch (demographic) {
       case 'connector':
         // Change the lights in all Groups
